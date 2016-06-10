@@ -1,4 +1,4 @@
-package com.tp.up.client;
+package com.tp.up.client.model;
 
 import java.util.Date;
 import java.util.List;

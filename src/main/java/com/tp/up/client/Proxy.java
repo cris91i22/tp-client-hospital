@@ -28,7 +28,7 @@ public class Proxy {
 		
 	}
 
-	public ArrayList<com.tp.up.client.Pacient> getPatients() throws Exception {
+	public ArrayList<com.tp.up.client.model.Pacient> getPatients() throws Exception {
 		String url = "http://localhost:8080/service/patients";
 		HttpClient client = HttpClientBuilder.create().build();
 		HttpGet request = new HttpGet(url);
@@ -41,7 +41,7 @@ public class Proxy {
 		while ((line = rd.readLine()) != null) {
 			result.append(line);
 		}
-		ArrayList<com.tp.up.client.Pacient> myObjects = mapper.readValue(result.toString(), new TypeReference<ArrayList<com.tp.up.client.Pacient>>(){});
+		ArrayList<com.tp.up.client.model.Pacient> myObjects = mapper.readValue(result.toString(), new TypeReference<ArrayList<com.tp.up.client.model.Pacient>>(){});
 		return myObjects;
 	}
 
@@ -55,7 +55,7 @@ public class Proxy {
 		
 	}
 
-	public java.lang.Integer crearConsulta(java.lang.Integer param0, java.lang.String param1) throws Exception {
+	public Integer crearConsulta(java.lang.Integer param0, java.lang.String param1) throws Exception {
 		String url = "http://localhost:8080/service/create/consultation" + "/" + param0.toString() + "/" + param1.toString();
 		HttpClient client = HttpClientBuilder.create().build();
 		HttpPost request = new HttpPost(url);
@@ -68,11 +68,11 @@ public class Proxy {
 		while ((line = rd.readLine()) != null) {
 			result.append(line);
 		}
-		java.lang.Integer myObjects = mapper.readValue(result.toString(), new TypeReference<java.lang.Integer>(){});
+		Integer myObjects = mapper.readValue(result.toString(), new TypeReference<Integer>(){});
 		return myObjects;
 	}
 
-	public ArrayList<com.tp.up.client.Consultation> getConsultations() throws Exception {
+	public ArrayList<com.tp.up.client.model.Consultation> getConsultations() throws Exception {
 		String url = "http://localhost:8080/service/consultations";
 		HttpClient client = HttpClientBuilder.create().build();
 		HttpGet request = new HttpGet(url);
@@ -85,7 +85,7 @@ public class Proxy {
 		while ((line = rd.readLine()) != null) {
 			result.append(line);
 		}
-		ArrayList<com.tp.up.client.Consultation> myObjects = mapper.readValue(result.toString(), new TypeReference<ArrayList<com.tp.up.client.Consultation>>(){});
+		ArrayList<com.tp.up.client.model.Consultation> myObjects = mapper.readValue(result.toString(), new TypeReference<ArrayList<com.tp.up.client.model.Consultation>>(){});
 		return myObjects;
 	}
 
